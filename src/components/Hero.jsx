@@ -26,12 +26,7 @@ const Hero = () => {
                 zIndex: -1
             }}></div>
 
-            <div className="container" style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '4rem',
-                alignItems: 'center'
-            }}>
+            <div className="container hero-section-grid">
                 {/* Text Content */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -39,16 +34,7 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                     style={{ maxWidth: '600px' }}
                 >
-                    <h1 style={{
-                        fontSize: '3.5rem',
-                        lineHeight: '1.2',
-                        fontWeight: '700',
-                        marginBottom: '1.5rem',
-                        background: 'linear-gradient(to right, #FFF, var(--primary-gold))',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        textShadow: '0 0 30px rgba(255, 215, 0, 0.3)'
-                    }}>
+                    <h1 className="hero-heading">
                         Empowering Wealth, the Desi Way — Dhanik Coin
                     </h1>
                     <p style={{
@@ -59,7 +45,7 @@ const Hero = () => {
                     }}>
                         Join the revolution in crypto that’s designed for everyone. Rewarding, simple, and rooted in prosperity.
                     </p>
-                    <div style={{ display: 'flex', gap: '1.5rem' }}>
+                    <div className="hero-buttons">
                         <motion.button
                             className="btn-primary"
                             whileHover={{ scale: 1.05 }}

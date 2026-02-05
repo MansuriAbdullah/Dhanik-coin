@@ -2,17 +2,17 @@ import React from 'react';
 
 const Advisory = () => {
     return (
-        <section id="advisory" style={{ padding: '8rem 0', background: 'var(--bg-card)' }}>
+        <section id="advisory" className="section-padding" style={{ background: 'var(--bg-card)' }}>
             <div className="container">
                 <h2 className="section-title">Financial Advisory</h2>
                 <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem', color: 'var(--text-secondary)' }}>
                     We provide education-driven financial advisory solutions focused on knowledge, risk awareness, and long-term growth.
                 </p>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+                <div className="responsive-grid">
 
                     {/* Market Education */}
-                    <div style={{ background: 'var(--bg-dark)', padding: '2rem', borderRadius: '16px' }}>
+                    <div className="card-box">
                         <h3 style={{ color: 'var(--primary-gold)', marginBottom: '1.5rem', fontSize: '1.5rem' }}>📊 Market Education</h3>
                         <ul style={{ paddingLeft: '1.2rem', color: 'var(--text-secondary)', lineHeight: '2' }}>
                             <li>Stock market basics</li>
@@ -23,7 +23,7 @@ const Advisory = () => {
                     </div>
 
                     {/* Trading Strategy */}
-                    <div style={{ background: 'var(--bg-dark)', padding: '2rem', borderRadius: '16px' }}>
+                    <div className="card-box">
                         <h3 style={{ color: 'var(--primary-gold)', marginBottom: '1.5rem', fontSize: '1.5rem' }}>📈 Trading Guidance</h3>
                         <ul style={{ paddingLeft: '1.2rem', color: 'var(--text-secondary)', lineHeight: '2' }}>
                             <li>Risk management techniques</li>
@@ -34,7 +34,7 @@ const Advisory = () => {
                     </div>
 
                     {/* Planning */}
-                    <div style={{ background: 'var(--bg-dark)', padding: '2rem', borderRadius: '16px' }}>
+                    <div className="card-box">
                         <h3 style={{ color: 'var(--primary-gold)', marginBottom: '1.5rem', fontSize: '1.5rem' }}>🛡 Investment Planning</h3>
                         <ul style={{ paddingLeft: '1.2rem', color: 'var(--text-secondary)', lineHeight: '2' }}>
                             <li>Financial goal setting</li>

@@ -24,7 +24,7 @@ const Header = () => {
   ];
 
   return (
-    <motion.nav 
+    <motion.nav
       className={`header ${scrolled ? 'scrolled' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -42,10 +42,10 @@ const Header = () => {
         transition: 'all 0.3s ease'
       }}
     >
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <a href="#" className="logo" style={{ 
-          fontSize: '1.5rem', 
-          fontWeight: '700', 
+      <div className="container">
+        <a href="#" className="logo" style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
           color: 'var(--primary-gold)',
           textTransform: 'uppercase',
           letterSpacing: '1px'
@@ -54,10 +54,10 @@ const Header = () => {
         </a>
 
         {/* Desktop Nav */}
-        <ul className="desktop-menu" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+        <ul className="desktop-menu">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a 
+              <a
                 href={link.href}
                 style={{
                   color: 'var(--text-primary)',
@@ -75,14 +75,14 @@ const Header = () => {
         </ul>
 
         {/* Mobile Toggle */}
-        <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)} style={{ display: 'none', cursor: 'pointer', color: 'white' }}>
+        <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <motion.div 
+        <motion.div
           className="mobile-menu"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -101,9 +101,9 @@ const Header = () => {
           }}
         >
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
+            <a
+              key={link.name}
+              href={link.href}
               onClick={() => setIsOpen(false)}
               style={{ fontSize: '1.1rem', fontWeight: '600' }}
             >

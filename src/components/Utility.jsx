@@ -12,7 +12,7 @@ const utilities = [
 
 const Utility = () => {
     return (
-        <section id="utility" style={{ padding: '8rem 0', background: 'var(--bg-dark)' }}>
+        <section id="utility" className="section-padding" style={{ background: 'var(--bg-dark)' }}>
             <div className="container">
                 <h2 className="section-title">Token Utility</h2>
                 <div style={{

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <section id="about" style={{ padding: '8rem 0', background: 'var(--bg-dark)' }}>
+        <section id="about" className="section-padding" style={{ background: 'var(--bg-dark)' }}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -13,12 +13,7 @@ const About = () => {
                 >
                     <h2 className="section-title">About Us</h2>
 
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                        gap: '4rem',
-                        marginTop: '4rem'
-                    }}>
+                    <div className="responsive-grid" style={{ marginTop: '4rem' }}>
                         {/* Who We Are */}
                         <div className="about-card">
                             <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--primary-gold)' }}>Who We Are</h3>

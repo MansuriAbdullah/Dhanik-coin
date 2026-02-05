@@ -32,34 +32,24 @@ const features = [
 
 const Features = () => {
     return (
-        <section id="features" style={{ padding: '8rem 0', background: 'var(--bg-card)' }}>
+        <section id="features" className="section-padding" style={{ background: 'var(--bg-card)' }}>
             <div className="container">
                 <h2 className="section-title">Why Dhanik Coin?</h2>
                 <p style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 4rem', color: 'var(--text-secondary)' }}>
                     Today’s financial systems are complex. Dhanik Coin changes that by creating a simple, rewarding, and community-first ecosystem.
                 </p>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '2rem'
-                }}>
+                <div className="responsive-grid">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
+                            className="card-box"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ y: -10 }}
-                            style={{
-                                background: 'var(--bg-dark)',
-                                padding: '2rem',
-                                borderRadius: '16px',
-                                border: '1px solid rgba(255,255,255,0.05)',
-                                boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-                                textAlign: 'center'
-                            }}
+                            style={{ textAlign: 'center' }}
                         >
                             <div style={{
                                 background: 'rgba(255, 215, 0, 0.1)',

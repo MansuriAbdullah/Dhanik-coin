@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer style={{ background: '#05070a', padding: '4rem 0 2rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
             <div className="container">
-                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '3rem', marginBottom: '3rem' }}>
+                <div className="footer-row">
 
                     <div style={{ maxWidth: '400px' }}>
                         <h3 style={{ color: 'var(--primary-gold)', marginBottom: '1rem', fontSize: '1.5rem' }}>Dhanik Coin</h3>

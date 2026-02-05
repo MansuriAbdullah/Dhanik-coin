@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 
 const Careers = () => {
     return (
-        <section id="careers" style={{ padding: '8rem 0', background: 'var(--bg-dark)' }}>
+        <section id="careers" className="section-padding" style={{ background: 'var(--bg-dark)' }}>
             <div className="container">
                 <h2 className="section-title">Careers at Dhanik</h2>
                 <p style={{ textAlign: 'center', marginBottom: '4rem', color: 'var(--text-secondary)' }}>
                     Build the Future of Finance with Us. We look for passionate individuals to grow with us.
                 </p>
 
-                <div style={{ background: 'linear-gradient(135deg, rgba(255,215,0,0.1), rgba(0,0,0,0))', padding: '3rem', borderRadius: '20px', border: '1px solid rgba(255,215,0,0.2)' }}>
+                <div className="gradient-card">
                     <h3 style={{ fontSize: '2rem', marginBottom: '2rem', color: '#fff' }}>🎓 Internship Opportunities</h3>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
+                    <div className="responsive-grid">
                         <div>
                             <h4 style={{ color: 'var(--primary-gold)', marginBottom: '1rem', fontSize: '1.3rem' }}>Finance Internship</h4>
                             <ul style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
