@@ -1,54 +1,204 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaExchangeAlt, FaAward, FaChartLine, FaVoteYea, FaCreditCard } from 'react-icons/fa';
+import { FaExchangeAlt, FaAward, FaChartLine, FaVoteYea, FaCreditCard, FaArrowRight } from 'react-icons/fa';
 
 const utilities = [
-    { icon: <FaExchangeAlt />, text: "Peer-to-peer payments" },
-    { icon: <FaAward />, text: "Rewards for learning and internships" },
-    { icon: <FaChartLine />, text: "Staking for passive income" },
-    { icon: <FaVoteYea />, text: "Community governance voting" },
-    { icon: <FaCreditCard />, text: "Partner merchant payments (future)" },
+    {
+        icon: <FaExchangeAlt />,
+        title: "Peer-to-peer Payments",
+        desc: "Send and receive funds instantly anywhere in the world with near-zero transaction fees. Secure, fast, and borderless.",
+        color: "from-yellow-400 to-yellow-600"
+    },
+    {
+        icon: <FaAward />,
+        title: "Rewards & Internships",
+        desc: "Earn Dhanik Coins by completing financial literacy courses and participating in our exclusive internship programs.",
+        color: "from-blue-400 to-blue-600"
+    },
+    {
+        icon: <FaChartLine />,
+        title: "Staking Income",
+        desc: "Lock your tokens in our secure staking protocol to support the network and earn attractive annual percentage yields (APY).",
+        color: "from-green-400 to-green-600"
+    },
+    {
+        icon: <FaVoteYea />,
+        title: "Governance Voting",
+        desc: "Have a real say in the platform's future. Use your coins to vote on key proposals and protocol upgrades.",
+        color: "from-purple-400 to-purple-600"
+    },
+    {
+        icon: <FaCreditCard />,
+        title: "Merchant Payments",
+        desc: "Shop with your crypto. We are partnering with major retailers to enable direct purchases using Dhanik Coin.",
+        color: "from-red-400 to-red-600"
+    }
 ];
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" }
+    }
+};
 
 const Utility = () => {
     return (
-        <section id="utility" className="section-padding" style={{ background: 'var(--bg-dark)' }}>
+        <section id="utility" className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
+            {/* Background Elements */}
+            <div style={{
+                position: 'absolute',
+                top: '20%',
+                left: '-10%',
+                width: '500px',
+                height: '500px',
+                background: 'radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%)',
+                filter: 'blur(80px)',
+                zIndex: -1
+            }}></div>
+            <div style={{
+                position: 'absolute',
+                bottom: '10%',
+                right: '-10%',
+                width: '500px',
+                height: '500px',
+                background: 'radial-gradient(circle, rgba(0, 180, 216, 0.05) 0%, transparent 70%)',
+                filter: 'blur(80px)',
+                zIndex: -1
+            }}></div>
+
             <div className="container">
-                <h2 className="section-title">Token Utility</h2>
-                <div style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'center',
-                    gap: '2rem',
-                    marginTop: '4rem'
-                }}>
-                    {utilities.map((item, index) => (
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    style={{ textAlign: 'center', marginBottom: '4rem' }}
+                >
+                    <h2 className="section-title">Token Utility</h2>
+                    <p style={{
+                        color: 'var(--text-secondary)',
+                        maxWidth: '600px',
+                        margin: '1rem auto',
+                        fontSize: '1.1rem'
+                    }}>
+                        Discover the power of Dhanik Coin. More than just a currency,
+                        it's your key to a comprehensive financial ecosystem.
+                    </p>
+                </motion.div>
+
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                        gap: '2rem'
+                    }}
+                >
+                    {utilities.map((util, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ y: -5, borderColor: 'var(--primary-gold)' }}
+                            variants={cardVariants}
+                            whileHover={{ y: -10 }}
                             style={{
-                                background: 'var(--bg-card)',
-                                padding: '2rem',
-                                borderRadius: '12px',
-                                border: '1px solid rgba(255,255,255,0.05)',
-                                minWidth: '250px',
+                                background: 'rgba(255, 255, 255, 0.03)',
+                                backdropFilter: 'blur(10px)',
+                                borderRadius: '20px',
+                                border: '1px solid rgba(255, 255, 255, 0.05)',
+                                overflow: 'hidden',
                                 display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                gap: '1rem',
-                                textAlign: 'center'
+                                flexDirection: 'column'
                             }}
                         >
-                            <div style={{ color: 'var(--primary-gold)', fontSize: '2rem' }}>
-                                {item.icon}
+                            {/* Visual/Image Placeholder Section */}
+                            <div style={{
+                                height: '200px',
+                                background: `linear-gradient(135deg, rgba(20, 20, 20, 1), rgba(40, 40, 40, 1))`,
+                                position: 'relative',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                overflow: 'hidden'
+                            }}>
+                                {/* Animated Background Glow */}
+                                <motion.div
+                                    animate={{
+                                        opacity: [0.3, 0.6, 0.3],
+                                        scale: [1, 1.2, 1]
+                                    }}
+                                    transition={{ duration: 4, repeat: Infinity }}
+                                    style={{
+                                        position: 'absolute',
+                                        width: '100%',
+                                        height: '100%',
+                                        background: `radial-gradient(circle at center, ${index % 2 === 0 ? 'rgba(212, 175, 55, 0.2)' : 'rgba(0, 180, 216, 0.2)'}, transparent 70%)`,
+                                    }}
+                                />
+
+                                {/* Icon as Image Centerpiece */}
+                                <motion.div
+                                    whileHover={{ scale: 1.1, rotate: 5 }}
+                                    style={{
+                                        fontSize: '4rem',
+                                        color: index % 2 === 0 ? 'var(--primary-gold)' : 'var(--accent-blue)',
+                                        zIndex: 1,
+                                        filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.5))'
+                                    }}
+                                >
+                                    {util.icon}
+                                </motion.div>
                             </div>
-                            <p style={{ fontWeight: '500', fontSize: '1.1rem' }}>{item.text}</p>
+
+                            {/* Content Section */}
+                            <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                <h3 style={{
+                                    fontSize: '1.5rem',
+                                    fontWeight: '700',
+                                    marginBottom: '1rem',
+                                    color: '#fff'
+                                }}>
+                                    {util.title}
+                                </h3>
+                                <p style={{
+                                    color: 'var(--text-secondary)',
+                                    lineHeight: '1.6',
+                                    marginBottom: '1.5rem',
+                                    flex: 1
+                                }}>
+                                    {util.desc}
+                                </p>
+                                <motion.div
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        color: index % 2 === 0 ? 'var(--primary-gold)' : 'var(--accent-blue)',
+                                        fontWeight: '600',
+                                        cursor: 'pointer',
+                                        fontSize: '0.9rem'
+                                    }}
+                                    whileHover={{ x: 5 }}
+                                >
+                                    Learn more <FaArrowRight style={{ fontSize: '0.8rem' }} />
+                                </motion.div>
+                            </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

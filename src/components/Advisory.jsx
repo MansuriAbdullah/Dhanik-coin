@@ -1,8 +1,9 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Advisory = () => {
     return (
-        <section id="advisory" className="section-padding" style={{ background: 'var(--bg-card)' }}>
+        <section id="advisory" className="section-padding">
             <div className="container">
                 <h2 className="section-title">Financial Advisory</h2>
                 <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem', color: 'var(--text-secondary)' }}>
@@ -12,37 +13,46 @@ const Advisory = () => {
                 <div className="responsive-grid">
 
                     {/* Market Education */}
-                    <div className="card-box">
-                        <h3 style={{ color: 'var(--primary-gold)', marginBottom: '1.5rem', fontSize: '1.5rem' }}>📊 Market Education</h3>
+                    <motion.div
+                        className="card-box glass"
+                        whileHover={{ y: -5 }}
+                    >
+                        <h3 className="text-gradient" style={{ marginBottom: '1.5rem', fontSize: '1.5rem' }}>📊 Market Education</h3>
                         <ul style={{ paddingLeft: '1.2rem', color: 'var(--text-secondary)', lineHeight: '2' }}>
                             <li>Stock market basics</li>
                             <li>Forex market structure</li>
                             <li>Crypto & blockchain fundamentals</li>
                             <li>Portfolio diversification concepts</li>
                         </ul>
-                    </div>
+                    </motion.div>
 
                     {/* Trading Strategy */}
-                    <div className="card-box">
-                        <h3 style={{ color: 'var(--primary-gold)', marginBottom: '1.5rem', fontSize: '1.5rem' }}>📈 Trading Guidance</h3>
+                    <motion.div
+                        className="card-box glass"
+                        whileHover={{ y: -5 }}
+                    >
+                        <h3 className="text-gradient" style={{ marginBottom: '1.5rem', fontSize: '1.5rem' }}>📈 Trading Guidance</h3>
                         <ul style={{ paddingLeft: '1.2rem', color: 'var(--text-secondary)', lineHeight: '2' }}>
                             <li>Risk management techniques</li>
                             <li>Market structure analysis</li>
                             <li>Technical & fundamental insights</li>
                             <li>Trading psychology coaching</li>
                         </ul>
-                    </div>
+                    </motion.div>
 
                     {/* Planning */}
-                    <div className="card-box">
-                        <h3 style={{ color: 'var(--primary-gold)', marginBottom: '1.5rem', fontSize: '1.5rem' }}>🛡 Investment Planning</h3>
+                    <motion.div
+                        className="card-box glass"
+                        whileHover={{ y: -5 }}
+                    >
+                        <h3 className="text-gradient" style={{ marginBottom: '1.5rem', fontSize: '1.5rem' }}>🛡 Investment Planning</h3>
                         <ul style={{ paddingLeft: '1.2rem', color: 'var(--text-secondary)', lineHeight: '2' }}>
                             <li>Financial goal setting</li>
                             <li>Asset allocation concepts</li>
                             <li>Long-term vs short-term education</li>
                             <li>Wealth preservation strategies</li>
                         </ul>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Risk Disclosure */}
@@ -51,7 +61,8 @@ const Advisory = () => {
                     padding: '2rem',
                     border: '1px solid rgba(255, 100, 100, 0.3)',
                     background: 'rgba(255, 50, 50, 0.05)',
-                    borderRadius: '8px'
+                    borderRadius: '8px',
+                    backdropFilter: 'blur(5px)'
                 }}>
                     <h4 style={{ color: '#ff6b6b', marginBottom: '0.5rem' }}>⚠️ Risk Disclosure</h4>
                     <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
