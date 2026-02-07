@@ -12,7 +12,7 @@ const utilities = [
     {
         icon: <FaAward />,
         title: "Rewards & Internships",
-        desc: "Earn Dhanik Coins by completing financial literacy courses and participating in our exclusive internship programs.",
+        desc: "Earn Dhanik by completing financial literacy courses and participating in our exclusive internship programs.",
         color: "from-blue-400 to-blue-600"
     },
     {
@@ -93,7 +93,7 @@ const Utility = () => {
                         margin: '1rem auto',
                         fontSize: '1.1rem'
                     }}>
-                        Discover the power of Dhanik Coin. More than just a currency,
+                        Discover the power of Dhanik. More than just a currency,
                         it's your key to a comprehensive financial ecosystem.
                     </p>
                 </motion.div>
@@ -103,21 +103,17 @@ const Utility = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                        gap: '2rem'
-                    }}
+                    className="features-grid"
                 >
                     {utilities.map((util, index) => (
                         <motion.div
                             key={index}
                             variants={cardVariants}
-                            whileHover={{ y: -10 }}
+                            whileHover={{ y: -8 }}
                             style={{
                                 background: 'rgba(255, 255, 255, 0.03)',
                                 backdropFilter: 'blur(10px)',
-                                borderRadius: '20px',
+                                borderRadius: '16px',
                                 border: '1px solid rgba(255, 255, 255, 0.05)',
                                 overflow: 'hidden',
                                 display: 'flex',
@@ -126,7 +122,7 @@ const Utility = () => {
                         >
                             {/* Visual/Image Placeholder Section */}
                             <div style={{
-                                height: '200px',
+                                height: '140px',
                                 background: `linear-gradient(135deg, rgba(20, 20, 20, 1), rgba(40, 40, 40, 1))`,
                                 position: 'relative',
                                 display: 'flex',
@@ -153,10 +149,10 @@ const Utility = () => {
                                 <motion.div
                                     whileHover={{ scale: 1.1, rotate: 5 }}
                                     style={{
-                                        fontSize: '4rem',
+                                        fontSize: '3rem',
                                         color: index % 2 === 0 ? 'var(--primary-gold)' : 'var(--accent-blue)',
                                         zIndex: 1,
-                                        filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.5))'
+                                        filter: 'drop-shadow(0 8px 15px rgba(0,0,0,0.4))'
                                     }}
                                 >
                                     {util.icon}
@@ -164,19 +160,20 @@ const Utility = () => {
                             </div>
 
                             {/* Content Section */}
-                            <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                 <h3 style={{
-                                    fontSize: '1.5rem',
+                                    fontSize: '1.3rem',
                                     fontWeight: '700',
-                                    marginBottom: '1rem',
+                                    marginBottom: '0.8rem',
                                     color: '#fff'
                                 }}>
                                     {util.title}
                                 </h3>
                                 <p style={{
                                     color: 'var(--text-secondary)',
-                                    lineHeight: '1.6',
-                                    marginBottom: '1.5rem',
+                                    lineHeight: '1.5',
+                                    marginBottom: '1rem',
+                                    fontSize: '0.95rem',
                                     flex: 1
                                 }}>
                                     {util.desc}

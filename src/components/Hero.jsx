@@ -39,7 +39,7 @@ const Hero = () => {
             position: 'relative',
             overflow: 'hidden',
             paddingTop: '80px',
-            paddingBottom: '60px'
+            paddingBottom: '80px'
         }}>
             {/* Animated Background Gradients */}
             <motion.div
@@ -149,58 +149,101 @@ const Hero = () => {
                             lineHeight: '1.8',
                             maxWidth: '550px'
                         }}>
-                            Join 50,000+ investors building wealth with Dhanik Coin.
+                            Join 50,000+ investors building wealth with Dhanik.
                             Secure, transparent, and designed for everyone.
                         </motion.p>
 
-                        <motion.div className="hero-buttons" variants={itemVariants}>
+                        <motion.div
+                            className="hero-buttons"
+                            variants={itemVariants}
+                        >
+                            {/* NEW: Solid "Molten Gold" 3D Button */}
                             <motion.button
-                                className="btn-primary"
-                                whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(212, 175, 55, 0.4)' }}
-                                whileTap={{ scale: 0.98 }}
-                                style={{ fontSize: '1rem', padding: '16px 40px' }}
+                                whileHover={{
+                                    y: -4,
+                                    boxShadow: '0 20px 40px rgba(255, 215, 0, 0.4)'
+                                }}
+                                whileTap={{ scale: 0.96, y: 0 }}
+                                style={{
+                                    background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                                    color: '#000',
+                                    border: 'none',
+                                    padding: '18px 50px',
+                                    fontSize: '1.25rem',
+                                    fontWeight: '800',
+                                    borderRadius: '16px',
+                                    cursor: 'pointer',
+                                    boxShadow: '0 10px 20px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.5)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '12px',
+                                    letterSpacing: '0.5px',
+                                    textTransform: 'uppercase'
+                                }}
                             >
-                                Get Started →
+                                Get Started
+                                <FaRocket style={{ fontSize: '1.2rem' }} />
                             </motion.button>
+
+                            {/* NEW: Clean Minimalist Outline */}
                             <motion.button
-                                whileHover={{ scale: 1.05, borderColor: 'var(--primary-gold)' }}
-                                whileTap={{ scale: 0.98 }}
+                                whileHover={{
+                                    background: 'rgba(255,255,255,0.1)',
+                                    borderColor: '#FFF',
+                                    scale: 1.05
+                                }}
+                                whileTap={{ scale: 0.95 }}
                                 style={{
                                     background: 'transparent',
-                                    border: '2px solid rgba(255, 255, 255, 0.2)',
+                                    border: '2px solid rgba(255, 255, 255, 0.4)',
                                     color: '#FFF',
-                                    padding: '16px 40px',
-                                    borderRadius: '50px',
+                                    padding: '18px 50px',
+                                    fontSize: '1.25rem',
                                     fontWeight: '600',
+                                    borderRadius: '16px',
                                     cursor: 'pointer',
-                                    fontSize: '1rem'
+                                    backdropFilter: 'blur(5px)'
                                 }}
                             >
                                 Learn More
                             </motion.button>
                         </motion.div>
 
-                        {/* Feature Pills */}
-                        <motion.div variants={itemVariants} className="hero-feature-pills">
+                        {/* Feature Pills - Pushed Down for Space */}
+                        <motion.div
+                            variants={itemVariants}
+                            className="hero-feature-pills"
+                            style={{ marginTop: '4rem' }}
+                        >
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
-                                    whileHover={{ y: -3 }}
+                                    whileHover={{ y: -5, background: 'rgba(255,255,255,0.08)' }}
                                     style={{
                                         display: 'flex',
                                         alignItems: 'center',
-                                        gap: '0.7rem',
-                                        background: 'rgba(15, 18, 24, 0.6)',
-                                        backdropFilter: 'blur(10px)',
-                                        padding: '0.8rem 1.5rem',
+                                        gap: '12px',
+                                        background: 'rgba(15, 18, 24, 0.8)',
+                                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                                        padding: '14px 28px',
                                         borderRadius: '50px',
-                                        border: '1px solid rgba(255, 255, 255, 0.05)'
+                                        cursor: 'default',
+                                        boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
                                     }}
                                 >
-                                    <div style={{ color: feature.color, fontSize: '1.3rem' }}>
+                                    <div style={{
+                                        color: feature.color,
+                                        fontSize: '1.4rem',
+                                        filter: `drop-shadow(0 0 8px ${feature.color})`
+                                    }}>
                                         {feature.icon}
                                     </div>
-                                    <span style={{ color: '#FFF', fontWeight: '600' }}>
+                                    <span style={{
+                                        color: 'rgba(255,255,255,0.9)',
+                                        fontWeight: '600',
+                                        fontSize: '1.1rem',
+                                        letterSpacing: '0.5px'
+                                    }}>
                                         {feature.title}
                                     </span>
                                 </motion.div>

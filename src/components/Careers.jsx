@@ -11,14 +11,14 @@ const Careers = () => {
                 </p>
 
                 <div className="gradient-card">
-                    <h3 style={{ fontSize: '2rem', marginBottom: '2rem', color: '#fff' }}>🎓 Internship Opportunities</h3>
+                    <h3 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', marginBottom: '2rem', color: '#fff' }}>🎓 Internship Opportunities</h3>
 
                     <div className="responsive-grid">
                         <div>
                             <h4 style={{ color: 'var(--primary-gold)', marginBottom: '1rem', fontSize: '1.3rem' }}>Finance Internship</h4>
                             <ul style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
                                 <li>Forex market analysis</li>
-                                <li>Indian stock market research</li>
+                                <li>Stock market research</li>
                                 <li>Crypto & blockchain fundamentals</li>
                                 <li>Trading psychology & risk management</li>
                             </ul>

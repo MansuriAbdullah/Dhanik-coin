@@ -50,7 +50,7 @@ const Header = () => {
           textTransform: 'uppercase',
           letterSpacing: '1px'
         }}>
-          Dhanik Coin
+          Dhanik
         </a>
 
         {/* Desktop Nav */}

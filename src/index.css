@@ -198,6 +198,19 @@ ul {
   gap: 2rem;
 }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 4rem;
+  align-items: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
 .card-box {
   background: var(--bg-card);
   padding: 2.5rem;
@@ -293,9 +306,15 @@ ul {
   }
 
   /* Grids */
-  .responsive-grid {
+  .responsive-grid,
+  .features-grid {
     grid-template-columns: 1fr !important;
     gap: 1.5rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem;
   }
 
   .gradient-card {
@@ -478,6 +497,8 @@ ul {
 
   .hero-card-inner {
     padding: 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .section-title {

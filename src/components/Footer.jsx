@@ -3,26 +3,34 @@ import { motion } from 'framer-motion';
 import { FaTwitter, FaTelegram, FaLinkedin, FaInstagram, FaShieldAlt, FaUsers, FaRocket, FaChartLine, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
-    const features = [
+    const footerFeatures = [
         {
             icon: <FaShieldAlt />,
             title: 'Secure & Transparent',
-            desc: 'Bank-grade security with blockchain transparency'
+            desc: 'Bank-grade security with blockchain transparency',
+            gradient: 'linear-gradient(135deg, #EF476F 0%, #D62828 100%)',
+            delay: 0
         },
         {
             icon: <FaUsers />,
             title: 'Community First',
-            desc: 'Built by the community, for the community'
+            desc: 'Built by the community, for the community',
+            gradient: 'linear-gradient(135deg, #00B4D8 0%, #0077B6 100%)',
+            delay: 0.1
         },
         {
             icon: <FaRocket />,
             title: 'Fast & Scalable',
-            desc: 'Lightning-fast transactions with low fees'
+            desc: 'Lightning-fast transactions with low fees',
+            gradient: 'linear-gradient(135deg, #FFD700 0%, #FDB931 100%)',
+            delay: 0.2
         },
         {
             icon: <FaChartLine />,
             title: 'Growth Focused',
-            desc: 'Designed for long-term wealth creation'
+            desc: 'Designed for long-term wealth creation',
+            gradient: 'linear-gradient(135deg, #06D6A0 0%, #118AB2 100%)',
+            delay: 0.3
         }
     ];
 
@@ -38,17 +46,17 @@ const Footer = () => {
                 top: '0',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                width: '800px',
-                height: '400px',
-                background: 'radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%)',
-                filter: 'blur(80px)',
+                width: '100%',
+                height: '100%',
+                background: 'radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 60%)',
+                pointerEvents: 'none',
                 zIndex: 0
             }}></div>
 
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 {/* Features Section */}
                 <div style={{
-                    padding: '4rem 0 3rem',
+                    padding: '5rem 0 4rem',
                     borderBottom: '1px solid rgba(255,255,255,0.05)'
                 }}>
                     <motion.h3
@@ -57,67 +65,108 @@ const Footer = () => {
                         viewport={{ once: true }}
                         className="text-gradient"
                         style={{
-                            fontSize: '2rem',
+                            fontSize: '2.5rem',
                             textAlign: 'center',
-                            marginBottom: '3rem',
-                            fontWeight: '700'
+                            marginBottom: '4rem',
+                            fontWeight: '700',
+                            letterSpacing: '-0.5px'
                         }}
                     >
-                        Why Choose Dhanik Coin?
+                        Why Choose Dhanik?
                     </motion.h3>
 
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                        gap: '2rem'
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                        gap: '2.5rem'
                     }}>
-                        {features.map((feature, index) => (
+                        {footerFeatures.map((feature, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ y: -5 }}
+                                transition={{ delay: feature.delay, duration: 0.5 }}
+                                whileHover={{ y: -10, scale: 1.02 }}
                                 style={{
-                                    background: 'rgba(15, 18, 24, 0.4)',
-                                    backdropFilter: 'blur(10px)',
-                                    padding: '2rem',
-                                    borderRadius: '16px',
-                                    border: '1px solid rgba(255, 255, 255, 0.05)',
-                                    textAlign: 'center',
-                                    transition: 'all 0.3s ease'
+                                    background: 'rgba(20, 20, 30, 0.6)',
+                                    backdropFilter: 'blur(12px)',
+                                    borderRadius: '20px',
+                                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                                    overflow: 'hidden',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    boxShadow: '0 15px 35px rgba(0,0,0,0.2)'
                                 }}
                             >
+                                {/* Visual Image Area */}
                                 <div style={{
-                                    width: '60px',
-                                    height: '60px',
-                                    margin: '0 auto 1rem',
-                                    background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05))',
-                                    borderRadius: '50%',
+                                    height: '160px',
+                                    position: 'relative',
+                                    background: feature.gradient,
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    color: 'var(--primary-gold)',
-                                    fontSize: '1.8rem'
+                                    overflow: 'hidden'
                                 }}>
-                                    {feature.icon}
+                                    {/* Abstract Pattern Overlay */}
+                                    <div style={{
+                                        position: 'absolute',
+                                        inset: 0,
+                                        background: 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.1\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E")',
+                                        opacity: 0.3
+                                    }}></div>
+
+                                    {/* Animated Glow */}
+                                    <motion.div
+                                        animate={{
+                                            opacity: [0.4, 0.7, 0.4],
+                                            scale: [1, 1.1, 1]
+                                        }}
+                                        transition={{ duration: 4, repeat: Infinity }}
+                                        style={{
+                                            position: 'absolute',
+                                            width: '100%',
+                                            height: '100%',
+                                            background: 'radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%)',
+                                        }}
+                                    />
+
+                                    {/* 3D Icon */}
+                                    <motion.div
+                                        whileHover={{ scale: 1.2, rotate: [0, -10, 10, 0] }}
+                                        transition={{ duration: 0.5 }}
+                                        style={{
+                                            fontSize: '4rem',
+                                            color: '#fff',
+                                            zIndex: 2,
+                                            filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))'
+                                        }}
+                                    >
+                                        {feature.icon}
+                                    </motion.div>
                                 </div>
-                                <h4 style={{
-                                    color: '#fff',
-                                    marginBottom: '0.5rem',
-                                    fontSize: '1.1rem',
-                                    fontWeight: '600'
-                                }}>
-                                    {feature.title}
-                                </h4>
-                                <p style={{
-                                    color: 'var(--text-secondary)',
-                                    fontSize: '0.9rem',
-                                    lineHeight: '1.5'
-                                }}>
-                                    {feature.desc}
-                                </p>
+
+                                <div style={{ padding: '2rem', textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                    <h4 style={{
+                                        fontSize: '1.4rem',
+                                        fontWeight: '700',
+                                        marginBottom: '1rem',
+                                        background: feature.gradient,
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent'
+                                    }}>
+                                        {feature.title}
+                                    </h4>
+                                    <p style={{
+                                        color: 'var(--text-secondary)',
+                                        fontSize: '0.95rem',
+                                        lineHeight: '1.6',
+                                        flex: 1
+                                    }}>
+                                        {feature.desc}
+                                    </p>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
@@ -133,7 +182,7 @@ const Footer = () => {
                             fontSize: '1.8rem',
                             fontWeight: '700'
                         }}>
-                            Dhanik Coin
+                            Dhanik
                         </h3>
                         <p style={{
                             color: 'var(--text-secondary)',
@@ -357,7 +406,7 @@ const Footer = () => {
                             flexWrap: 'wrap',
                             justifyContent: 'center'
                         }}>
-                            <span>&copy; {new Date().getFullYear()} Dhanik Coin. All rights reserved.</span>
+                            <span>&copy; {new Date().getFullYear()} Dhanik. All rights reserved.</span>
                             <span>•</span>
                             <a href="#" style={{ color: 'inherit', transition: 'color 0.3s' }}
                                 onMouseOver={(e) => e.target.style.color = 'var(--primary-gold)'}
